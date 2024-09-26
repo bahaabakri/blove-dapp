@@ -1,0 +1,199 @@
+<!-- <div #heartReactionElement  class="heart-reaction">
+    <img class="w-full h-full" src="assets/home/heart-reaction.svg" alt="">
+</div> -->
+
+<div class="home-tab">
+    <div class="statistic">
+        <div>
+            <img src="assets/logo/logo.png" alt="">
+        </div>
+        <div class="title"  [@countChanged]="_homeTabService.tabValue()">
+            {{_homeTabService.tabValue() | number}}
+        </div>
+    </div>
+
+    <div class="vectors-matrix" #homeTab>
+        <div class="frame-heart-container">
+            <div class="frame-heart-wrapper">
+                <img class="frame-img" src="assets/home/frame.png" alt="">
+                <!-- <img class="frame-back-img" src="assets/home/frame-back.svg" alt=""> -->
+                <img class="heart-img" src="assets/home/tab-heart.png" alt="">
+                <img class="heart-feet-img" src="assets/home/heart-feet.png" alt="">
+                <div class="frame-back-img">
+                    <app-tab-frame-back
+                        [energyPercentage]="_homeTabService.currentEnergy()"
+                        [totalEnergy]="_homeTabService.totalEnergy"
+                    >
+                    </app-tab-frame-back>
+                </div>
+            </div>
+        </div>
+        <div class="vector-matrix-rtt">
+            <!-- <app-tab-vector-rtt
+                [color]="energyPercentage() >= 0 ? '#FF8E24' : '#242424'"
+                [energyPercentage]="sectionsEnergyPercentage()[0]"            >
+            </app-tab-vector-rtt> -->
+            <app-tab-vector
+                [color]="_homeTabService.energyPercentage() >= 0 ? '#FF8E24' : '#242424'"
+                [energyPercentage]="_homeTabService.sectionsEnergyPercentage()[0]"  
+                [svgWidth]="'89'"
+                [svgHeight]="'99'"
+                [svgViewBox]="'0 0 89 99'"
+                [svgD]="'M88.859 76.0269L77.7245 87.1291L66.1354 98.7181L5.65795 38.2732C4.32699 36.9422 2.60648 36.293 0.853516 36.293V0C8.25494 0 15.6564 2.82423 21.3048 8.47268L88.859 76.0269Z'"
+                [svgGradientId]="'paint_rtt_linear_9754_33900'"
+                [svgGradientX1]="'15.6607'"
+                [svgGradientX2]="'78.0385'"
+                [svgGradientY1]="'11.8197'"
+                [svgGradientY2]="'69.4419'"
+            >
+            </app-tab-vector>
+        </div>
+
+        <div class="vector-matrix-rtb">
+            <!-- <app-tab-vector-rtb
+                [color]="energyPercentage() >= 1 * (totalEnergy / numOfSectors) ? '#FFDB14' : '#242424'"
+                [energyPercentage]="sectionsEnergyPercentage()[1]"            >
+            </app-tab-vector-rtb> -->
+            <app-tab-vector
+                [color]="_homeTabService.energyPercentage() >= 1 * (100 / _homeTabService.numOfSectors) ? '#FFDB14' : '#242424'"
+                [energyPercentage]="_homeTabService.sectionsEnergyPercentage()[1]" 
+                [svgWidth]="'99'"
+                [svgHeight]="'89'"
+                [svgViewBox]="'0 0 99 89'"
+                [svgD]="'M98.8529 87.9999H62.5924C62.5924 86.2794 61.9432 84.5265 60.6122 83.1955L0.134766 22.7505L11.7238 11.1615L22.8584 0.0268555L90.4127 67.5486C96.0287 73.1971 98.8529 80.5985 98.8529 87.9999Z'"
+                [svgGradientId]="'paint_rtb_linear_9754_33900'"
+                [svgGradientX1]="'11.6607'"
+                [svgGradientX2]="'71.0385'"
+                [svgGradientY1]="'21.8197'"
+                [svgGradientY2]="'89.4419'"
+            >
+            </app-tab-vector>
+        </div>
+        <div class="vector-matrix-rbt">
+            <!-- <app-tab-vector-rbt
+            [color]="energyPercentage() >= 2 * (totalEnergy / numOfSectors) ? '#B1F600' : '#242424'"
+            [energyPercentage]="sectionsEnergyPercentage()[2]"            >
+            </app-tab-vector-rbt> -->
+            <app-tab-vector
+                [color]="_homeTabService.energyPercentage() >= 2 * (100 / _homeTabService.numOfSectors) ? '#B1F600' : '#242424'"
+                [energyPercentage]="_homeTabService.sectionsEnergyPercentage()[2]" 
+                [svgWidth]="'99'"
+                [svgHeight]="'88'"
+                [svgViewBox]="'0 0 99 88'"
+                [svgD]="'M98.8529 0C98.8529 7.40142 96.0287 14.8028 90.3802 20.4513L22.826 87.9731L11.7238 76.8709L0.134766 65.2819L60.6122 4.80443C61.9432 3.47347 62.5924 1.75297 62.5924 0H98.8529Z'"
+                [svgGradientId]="'paint_rbt_linear_9754_33900'"
+                [svgGradientX1]="'85.0385'"
+                [svgGradientX2]="'15.667'"
+                [svgGradientY1]="'19.4419'"
+                [svgGradientY2]="'82.8197'"
+        >
+        </app-tab-vector>
+        </div>
+        <div class="vector-matrix-rbb">
+            <!-- <app-tab-vector-rbb
+            [color]="energyPercentage() >= 3 * (totalEnergy / numOfSectors) ? '#49E400' : '#242424'"
+            [energyPercentage]="sectionsEnergyPercentage()[3]"            >
+            </app-tab-vector-rbb> -->
+            <app-tab-vector
+                [color]="_homeTabService.energyPercentage() >= 3 * (100 / _homeTabService.numOfSectors) ? '#49E400' : '#242424'"
+                [energyPercentage]="_homeTabService.sectionsEnergyPercentage()[3]"  
+                [svgWidth]="'89'"
+                [svgHeight]="'99'"
+                [svgViewBox]="'0 0 89 99'"
+                [svgD]="'M88.859 23.0055L21.3048 90.5273C15.6564 96.1758 8.25494 99 0.853516 99V62.7395C2.57402 62.7395 4.32699 62.0902 5.65795 60.7593L66.1354 0.28186L77.7245 11.8709L88.859 23.0055Z'"
+                [svgGradientId]="'paint_rbb_linear_9754_33900'"
+                [svgGradientX1]="'78.0385'"
+                [svgGradientX2]="'13.6607'"
+                [svgGradientY1]="'15.4419'"
+                [svgGradientY2]="'79.8197'"
+                >
+            </app-tab-vector>
+        </div>
+
+        <div class="vector-matrix-lbb">
+            <!-- <app-tab-vector-lbb
+            [color]="energyPercentage() >= 4 * (totalEnergy / numOfSectors) ? '#009EEC' : '#242424'"
+            [energyPercentage]="sectionsEnergyPercentage()[4]"            >
+            </app-tab-vector-lbb> -->
+
+            <app-tab-vector
+            [color]="_homeTabService.energyPercentage() >= 4 * (100 / _homeTabService.numOfSectors) ? '#009EEC' : '#242424'"
+            [energyPercentage]="_homeTabService.sectionsEnergyPercentage()[4]"    
+            [svgWidth]="'89'"
+            [svgHeight]="'99'"
+            [svgViewBox]="'0 0 89 99'"
+            [svgD]="'M88.8532 62.7395V99C81.4518 99 74.0503 96.1758 68.4019 90.5273L0.847656 23.0055L11.9823 11.8709L23.5713 0.28186L84.0488 60.7593C85.3797 62.0578 87.1327 62.7395 88.8532 62.7395Z'"
+            [svgGradientId]="'paint_lbb_linear_9754_33900'"
+            [svgGradientX1]="'86.6607'"
+            [svgGradientX2]="'15.0385'"
+            [svgGradientY1]="'70.8197'"
+            [svgGradientY2]="'15.4419'"
+            >
+            </app-tab-vector>
+        </div>
+        <div class="vector-matrix-lbt">
+            <!-- <app-tab-vector-lbt
+            [color]="energyPercentage() >= 5 * (totalEnergy / numOfSectors) ? '#9D21DC' : '#242424'"
+            [energyPercentage]="sectionsEnergyPercentage()[5]"
+            >
+            </app-tab-vector-lbt> -->
+            <app-tab-vector
+                [color]="_homeTabService.energyPercentage() >= 5 * (100 / _homeTabService.numOfSectors) ? '#9D21DC' : '#242424'"
+                [energyPercentage]="_homeTabService.sectionsEnergyPercentage()[5]"
+                [svgWidth]="'100'"
+                [svgHeight]="'88'"
+                [svgViewBox]="'0 0 100 88'"
+                [svgD]="'M99.5716 65.2819L87.9826 76.8709L76.848 88.0055L9.29374 20.4838C3.67774 14.8028 0.853516 7.40142 0.853516 0H37.114C37.114 1.72051 37.7633 3.47347 39.0942 4.80443L99.5716 65.2819Z'"
+                [svgGradientId]="'paint_lbt_linear_9754_33900'"
+                [svgGradientX2]="'15.0385'"
+                [svgGradientY2]="'12.4419'"
+                [svgGradientX1]="'78.6607'"
+                [svgGradientY1]="'82.8197'"
+            >
+            </app-tab-vector>
+        </div>
+        <div class="vector-matrix-ltb">
+            <!-- <app-tab-vector-ltb
+            [color]="energyPercentage() >= 6 * (totalEnergy / numOfSectors) ? '#B435F3' : '#242424'"
+            [energyPercentage]="sectionsEnergyPercentage()[6]"
+            >
+            </app-tab-vector-ltb> -->
+            <app-tab-vector
+                [color]="_homeTabService.energyPercentage() >= 6 * (100 / _homeTabService.numOfSectors) ? '#B435F3' : '#242424'"
+                [energyPercentage]="_homeTabService.sectionsEnergyPercentage()[6]"
+                [svgWidth]="'100'"
+                [svgHeight]="'88'"
+                [svgViewBox]="'0 0 100 88'"
+                [svgD]="'M99.5716 22.7182L39.0942 83.1956C37.7633 84.5266 37.114 86.2471 37.114 88H0.853516C0.853516 80.5986 3.67774 73.1972 9.3262 67.5487L76.848 -0.00549316L99.5716 22.7182Z'"
+                [svgGradientId]="'paint_ltb_linear_9754_33900'"
+                [svgGradientX2]="'78.0385'"
+                [svgGradientY2]="'15.4419'"
+                [svgGradientX1]="'13.6607'"
+                [svgGradientY1]="'79.8197'"
+                >
+            </app-tab-vector>
+        </div>
+        <div class="vector-matrix-ltt">
+            <!-- <app-tab-vector-ltt
+            [color]="energyPercentage() >= 7 * (totalEnergy / numOfSectors) ? '#F13333' : '#242424'"
+            [energyPercentage]="sectionsEnergyPercentage()[7]"
+            >
+            </app-tab-vector-ltt> -->
+            <app-tab-vector
+            [color]="_homeTabService.energyPercentage() >= 7 * (100 / _homeTabService.numOfSectors) ? '#F13333' : '#242424'"
+            [energyPercentage]="_homeTabService.sectionsEnergyPercentage()[7]"
+            [svgWidth]="'89'"
+            [svgHeight]="'99'"
+            [svgViewBox]="'0 0 89 99'"
+            [svgD]="'M88.8532 0V36.2605C87.1002 36.2605 85.3797 36.9097 84.0488 38.2407L23.5713 98.7181L0.847656 75.9945L68.4019 8.47268C74.0503 2.82423 81.4518 0 88.8532 0Z'"
+            [svgGradientId]="'paint_ltt_linear_9754_33900'"
+            [svgGradientX2]="'78.0385'"
+            [svgGradientY2]="'15.4419'"
+            [svgGradientX1]="'28.6607'"
+            [svgGradientY1]="'79.8197'"
+            >
+            </app-tab-vector>
+        </div>
+
+    </div>
+</div>

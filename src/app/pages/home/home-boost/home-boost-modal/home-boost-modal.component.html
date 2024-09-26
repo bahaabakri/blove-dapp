@@ -1,0 +1,36 @@
+<div class="home-boost-modal-wrapper" (click)="onClickInsideDialog($event)">
+    <div class="home-boost-modal">
+        <!-- <div class="img-title-subtitle" [style]="{
+            backgroundImage: 'url(' + imgSrc() + ')'
+        }">
+            <div>
+                <div class="title">{{title()}}</div>
+                <div class="subtitle">{{subtitle()}}</div>
+            </div>
+
+        </div> -->
+        <app-top-header
+        [title]="title()"
+        [subtitle]="subtitle()"
+        [imgSrc]="imgSrc()"
+        ></app-top-header>
+        @if(subtitle2() && subtitle2Val()) {
+            <app-tab-value-horizintal
+                [value]="subtitle2Val()"
+                [subtitle]="subtitle2()"
+            >
+            </app-tab-value-horizintal>
+        }
+        <app-tab-value-vertical
+        [value]="cost()"
+        [lvl]="lvl()"
+        >
+        </app-tab-value-vertical>
+        <div class="use-button-wrapper">
+            <app-button (handleClickEvent)="redeemBoost()" [borderColor]="'linear-gradient(to right, #00B7E8 0%, #04BC75 25%, #FFDA00 50%, #D30F0F 100%)'">
+                <span class="button-text">Use</span>
+            </app-button>
+        </div>
+    </div>
+</div>
+

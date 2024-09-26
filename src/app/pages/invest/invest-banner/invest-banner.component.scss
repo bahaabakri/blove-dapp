@@ -1,0 +1,8 @@
+
+.media {
+    @apply flex gap-2;
+    .media-item  {
+        width: 26px;
+        height: 26px;
+    }
+}

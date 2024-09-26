@@ -1,0 +1,73 @@
+
+<div class="play">
+    <app-top-header
+    [title]="'Play to Earn'"
+    [subtitle]="'Play games to maximize your income.'"
+    [imgSrc]="'assets/play/play-bg.png'"
+    >
+    </app-top-header>
+    <div class="play-list">
+        <div>
+            <img class="w-full" src="assets/play/play-horse-course.png" alt="Play Horse Game">
+        </div>
+        <div>
+            <img class="w-full" src="assets/play/coming-soon-plays.png" alt="Coming Soon Plays">
+        </div>
+        <div class="daily-activities">
+            <div class="daily-activities-header">
+                <div class="header-icon">
+                    <img src="assets/play/invite-user.png" alt="Invite">
+                    <div class="check-selected">
+                        <img src="assets/check-selected.png" alt="">
+                    </div>
+                </div>
+                <div class="header-title-subtitle">
+                    <div class="header-title">Daily Activities</div>
+                    <div class="header-subtitle">Invite +1 User to complete daily activities</div>
+                </div>
+            </div>
+            <div class="daily-activities-content">
+                <div class="game-card" (click)="openGuessWordGame()">
+                    <div class="game-card-img-wrapper">
+                        <img src="assets/play/word-guess-game.png" alt="Word Guess Game">
+                    </div>
+                    <div class="game-card-title">
+                        Word Guess
+                    </div>
+                    <div class="game-card-time" [appCountDown]="'2024-09-24T12:00:00'">
+                    </div>
+                    <div class="game-check-selected">
+                        <img src="assets/check-selected.png" alt="">
+                    </div>
+                </div>
+                <div class="game-card" (click)="openTriviaGame()">
+                    <div class="game-card-img-wrapper">
+                        <img src="assets/play/trivia-game.png" alt="Trivia Game">
+                    </div>
+                    <div class="game-card-title">
+                        Trivia Challenge
+                    </div>
+                    <div class="game-card-time" [appCountDown]="'2024-09-24T12:00:00'">
+                    </div>
+                    <div class="game-check-selected">
+                        <img src="assets/check-selected.png" alt="">
+                    </div>
+                </div>
+                <div class="game-card">
+                    <div class="game-card-img-wrapper">
+                        <img src="assets/play/spin-wheel-game.png" alt="Spin Wheel Game">
+                    </div>
+                    <div class="game-card-title">
+                        Spin Wheel
+                    </div>
+                    <div class="game-card-time">
+                        Coming Soon
+                    </div>
+                    <!-- <div class="game-check-selected">
+                        <img src="assets/check-selected.png" alt="">
+                    </div> -->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

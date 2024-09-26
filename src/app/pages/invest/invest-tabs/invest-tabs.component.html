@@ -1,0 +1,13 @@
+<nav mat-tab-nav-bar [tabPanel]="tabPanel" class="invest-tabs">
+    @for (investTab of investTabs; track investTab.id) {
+      <a mat-tab-link
+      [routerLink]="investTab.id"
+      routerLinkActive 
+      #rla="routerLinkActive"
+      [active]="rla.isActive"> 
+        {{investTab.title}}
+     </a>
+    }
+  </nav>
+  <router-outlet #tabPanel></router-outlet>
+  

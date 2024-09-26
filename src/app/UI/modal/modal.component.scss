@@ -1,0 +1,70 @@
+// .main-dialog {
+//     width: 100vw;
+//     height: 100vh;
+//     padding: 10px;
+//     background-color: rgba(0, 0, 0, 0.5);
+//     max-width: none !important;
+//     max-height: none !important;
+//     display: flex;
+//     flex-direction: column;
+//     justify-content: end;
+//     // display: flex; /* Optionally use flexbox to center content if needed */
+//     // justify-content: center;
+//     // align-items: center;
+//     box-shadow: none; /* Remove the default shadow if not needed */
+//     .dialog-content {
+//         background-color: #0D0D0D;
+//         border-radius: 20px 20px 0 0;
+//         width: 100vw;
+//         height: 50vh;
+//     }
+// }
+
+dialog {
+    height: 100%;
+    max-width: none !important;
+    max-height: none !important;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    box-shadow: none;
+    background-color: rgba(0, 0, 0, 0.5);
+    // padding: 10px;
+}
+dialog::backdrop {
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
+  }
+  dialog:focus-visible {
+    outline:none !important;
+  }
+  .dialog-header {
+    position: relative;
+    hr {
+        width: 100px;
+        border: 1px solid #fff;
+        border-radius: 5px;
+        position: absolute;
+        top: -10px;
+        left: calc(50% - 50px);
+    }
+    .close-icon-warper {
+        @apply cursor-pointer text-xs text-white  p-2;
+        position: absolute;
+        border-radius: 50%;
+        background-color: #0D0D0D;
+        right: 6px;
+        top: -30px;
+    }
+  }
+  .dialog-content {
+    width: 100vw;
+    min-height: 50vh;
+    padding: 0 10px;
+    .dialog-content-child {
+        background-color: #0D0D0D;
+        border-radius: 20px 20px 0 0;
+        max-width: 500px;
+        margin: auto;
+        height: 100%;
+    }
+}

@@ -1,0 +1,39 @@
+// .statistics {
+//     @apply flex flex-row;
+//     & > div {
+//         @apply flex-1 flex items-center gap-2 p-2;
+//     }
+
+//     .profit-per-hour {
+//         border-radius: 20px 0 0 20px;
+//         border: 1px solid #333;
+//         .data-wrapper {
+//             @apply flex flex-col gap-1;
+//             .title {
+//                 @apply text-white text-xs flex gap-2 items-center;
+//             }
+//             .value {
+//                 @apply text-slate-500 text-xs font-bold;
+//             }
+//         }
+//     }
+//     .energy {
+//         border-radius: 0 20px 20px 0;
+//         border: 1px solid #333;
+//         .data-wrapper {
+//             @apply flex justify-center items-center;
+//             .value {
+//                 @apply text-white text-sm font-bold;
+//             }
+//         }
+//     }
+// }
+.icon-wrapper {
+    min-width: 25px;
+}
+.data-wrapper {
+    @apply flex justify-center items-center;
+    .value {
+        @apply text-white text-sm font-bold;
+    }
+}

@@ -1,0 +1,66 @@
+<div class="home-boost">
+    <app-top-header
+    [title]="'Boost'"
+    [subtitle]="'Boost your energy and ability to increase the maximum reward.'"
+    [imgSrc]="'assets/home/boost-bg.png'"
+    >
+
+    </app-top-header>
+    <div class="home-boost-list">
+        @for (boostItem of homeBoostItems; track boostItem.id) {
+            <app-home-boost-item 
+                [id]="boostItem.id"
+                [title]="boostItem.title" 
+                [subtitle]="boostItem.subtitle" 
+                [iconPath]="boostItem.iconPath"
+                [imgSrc]="boostItem.imgSrc"
+                [subtitlePopup]="boostItem.subtitlePopup"
+                [cost]="boostItem.cost"
+                [subtitle2Val]="boostItem.subtitle2Val"
+                [subtitle2]="boostItem.subtitle2"
+                [lvl]="boostItem.lvl"
+                [logoPath]="boostItem.logoPath"
+                >
+
+            </app-home-boost-item>
+        }
+        <!-- <app-home-boost-item 
+            [id]="'full_energy'"
+            [title]="'Full Energy'" 
+            [subtitle]="'6/6'" 
+            [iconPath]="'assets/home/full-energy.png'" 
+            [imgSrc]="'assets/home/full-energy-img.png'"
+            [subtitlePopup]="'Refill your energy instantly and keep collecting points swiftly.'"
+            [cost]="'Free'"
+            >
+
+        </app-home-boost-item>
+        <app-home-boost-item 
+            [id]="'turbo'"
+            [title]="'Turbo'" 
+            [subtitle]="(50000 | number)?.toString()" 
+            [iconPath]="'assets/home/turbo.png'"
+            [isShowLogo]="true"
+            [imgSrc]="'assets/home/turbo-img.png'"
+            [subtitlePopup]="'Refill your energy 2x times faster for next 10 minutes.'"
+            [cost]="'50,000'"
+            >
+
+        </app-home-boost-item>
+
+        <app-home-boost-item 
+            [id]="'energy_capacity'"
+            [title]="'Energy Capacity'" 
+            [subtitle]="(100000 | number)?.toString()" 
+            [iconPath]="'assets/home/energy-capacity.png'"
+            [imgSrc]="'assets/home/energy-capacity-img.png'"
+            [isShowLogo]="true"
+            [subtitlePopup]="'Increase the capacity of energy to store.'"
+            [subtitle2Val]="'+500'"
+            [subtitle2]="'energy capacity'"
+            [cost]="'1,000,000'"
+            [ivi]="'lvl. 1'">
+
+        </app-home-boost-item> -->
+    </div>
+</div>

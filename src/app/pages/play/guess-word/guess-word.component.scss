@@ -1,0 +1,54 @@
+.guess-word-game {
+    @apply flex flex-col gap-2;
+
+    .info {
+        @apply flex flex-row gap-5 justify-center;
+        .info-el {
+            @apply flex flex-row gap-1 items-center;
+            .title {
+                @apply text-slate-400 text-xss;
+            }
+            .circle {
+                @apply h-2 w-2 rounded-full;
+            }
+            .included-circle {
+                background-color: var(--green-color);
+            }
+            .misplaced-circle {
+                background-color: var(--yellow-color)
+            }
+            .not-included-circle {
+                background-color: var(--gray-color)
+            }
+        }
+    }
+    .matrix {
+        @apply flex flex-col gap-2 justify-center px-5;
+        .row {
+            @apply flex flex-row gap-2 justify-center;
+            .element {
+                @apply basis-10 h-10 rounded-xl; 
+                background-color: var(--black-color);
+                &.selected {
+                    background-color: transparent;
+                    border:1px solid var(--black-color-secondary);
+                }
+                input {
+                    @apply w-full h-full text-lg text-white font-bold p-2 text-center;
+                    background-color: transparent;
+                }
+                &.included {
+                    background-color: var(--green-color);
+                    color: var(--black-color);
+                }
+                &.misplaced {
+                    background-color: var(--yellow-color);
+                    color: var(--black-color);
+                }
+                &.not-included {
+                    background-color: var(--gray-color);
+                }
+            }
+        }
+    }
+}

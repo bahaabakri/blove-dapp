@@ -1,0 +1,57 @@
+.invest-card {
+    @apply  flex flex-col justify-between relative; 
+    background-color: #151515;
+    border-radius: 20px;
+    .main-image {
+        height: 70px;
+        img {
+            margin: auto
+        }
+    }
+    .title {
+        @apply font-bold text-xs text-center ;
+    }
+    .title.active {
+        @apply text-white;
+    }
+    .title.lock {
+        @apply text-slate-500;
+    }
+    .profit-per-hour {
+        @apply flex justify-between items-center;
+        .title {
+            @apply text-slate-300 text-xss;
+        }
+        .value {
+            @apply px-2 py-1 font-bold text-xs text-white;
+            border: 1px solid var(--main-color);
+            border-radius:  20px;
+        }
+    }
+    .invest-card-footer {
+        @apply flex justify-between items-center px-5 py-2;
+        background-color: #242424;
+        border-radius: 0 0 20px 20px;
+        .tabVal-container {
+            @apply flex gap-2 items-center;
+            .tabVal {
+                @apply font-bold text-xs text-white;
+            }
+
+        }
+        .lvl {
+            @apply font-bold text-xss text-white;
+        }
+    }
+    .invest-card-label {
+        position: absolute;
+        top:  0;
+        left: 0;
+        width: 30px;
+        height: 30px;
+        border-radius: 0 0 20px 0;
+        img {
+            @apply p-1 pt-2;
+        }
+    }
+}

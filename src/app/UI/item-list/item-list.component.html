@@ -1,0 +1,23 @@
+<div class="item-list">
+    <div class="item-list-icon-title">
+        <div class="item-list-icon">
+            <img [src]="iconPath()" alt="">
+        </div>
+        <div class="item-list-title">
+            <div class="title">{{title()}}</div>
+            <div class="subtitle">
+                @if(logoPath()) {
+                    <div class="w-4 h-4">
+                        <img class="w-full h-full" [src]="logoPath()"  alt="">
+                    </div>
+                }
+                <div>
+                    {{subtitle()}}
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="item-list-action">
+        <img src="assets/arrow-right.png" alt="">
+    </div>
+</div>

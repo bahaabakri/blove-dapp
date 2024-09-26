@@ -1,0 +1,61 @@
+.play {
+    @apply flex flex-col gap-2;
+    .play-list {
+        @apply flex flex-col gap-2  p-5;
+        .daily-activities {
+            @apply p-5 flex flex-col gap-5 rounded-2xl;
+            border: 1px solid var(--black-color-secondary);
+            .daily-activities-header {
+                @apply flex gap-2;
+                .header-icon {
+                    position: relative;
+                    width: 40px;
+                    height: 40px;
+                    img {
+                        @apply w-full h-full;
+                    }
+                    .check-selected {
+                        @apply absolute right-0 bottom-0;
+                    }
+                }
+                .header-title-subtitle {
+                    @apply flex flex-col gap-1;
+                    .header-title {
+                        @apply text-white font-bold text-sm;
+                    }
+                    .header-subtitle {
+                        @apply text-slate-500 text-xs;
+                    }
+                }
+            }
+            .daily-activities-content {
+                @apply flex flex-row gap-5;
+                .game-card {
+                     @apply flex-1 flex flex-col gap-2 rounded-2xl p-2 relative cursor-pointer;
+                     background-color: var(--black-color);
+                     .game-card-img-wrapper {
+                        margin: auto;
+                        width: 40px;
+                        height: 40px;
+                        @screen xs {
+                            width: 60px;
+                            height: 60px;
+                        }
+                        img {
+                            @apply w-full h-full text-center;
+                        }
+                     }
+                     .game-card-title {
+                        @apply text-white text-xs text-center;
+                     }
+                     .game-card-time {
+                        @apply text-slate-400 text-xs text-center;
+                     }
+                     .game-check-selected {
+                        @apply absolute top-2 left-2;
+                     }
+                }
+            }
+        }
+    }
+}

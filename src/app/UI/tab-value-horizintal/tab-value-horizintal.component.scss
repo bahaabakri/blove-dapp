@@ -1,0 +1,20 @@
+.subtitle2 {
+    background-color: #1C1C1C;
+    width: fit-content;
+    margin: auto;
+    @apply rounded-xl p-2 flex gap-2 items-center;
+    .img-wrapper {
+        margin: auto;
+        width: 19px;
+        height: 19px;
+        img {
+            @apply w-full h-full;
+        }
+    }
+    .value {
+        @apply text-white font-bold text-sm
+    }
+    .desc {
+        @apply text-slate-400 text-sm
+    }
+}

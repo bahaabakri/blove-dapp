@@ -1,0 +1,25 @@
+.main-modal-wrapper {
+    @apply flex justify-center items-center px-5 pb-5;
+    .main-modal {
+        @apply flex flex-col gap-5 w-full;
+        // .img-title-subtitle {
+        //     @apply flex flex-col justify-end;
+        //     width: 100%;
+        //     height: 229px;  
+        //     background-size: contain;
+        //     background-repeat: no-repeat;
+        //     background-position: center;
+        //     @apply flex flex-col items-center gap-2;
+        //     .title {
+        //         @apply text-white text-lg font-bold text-center;
+        //     }
+        //     .subtitle {
+        //         @apply text-slate-400 text-sm text-center;
+        //     }
+    
+        // }
+        .use-button-wrapper {
+            @apply px-5;
+        }
+    }
+}

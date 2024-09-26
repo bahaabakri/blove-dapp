@@ -1,0 +1,21 @@
+.item-list {
+    @apply flex flex-row justify-between items-center p-3 rounded-lg;
+    background-color: var(--black-color);
+    .item-list-icon-title {
+        @apply flex flex-row gap-5 items-center;
+        .item-list-icon {
+            @apply p-1;
+            width: 35px;
+            height: 35px;
+        }
+        .item-list-title {
+            @apply flex flex-col gap-1;
+            .title {
+                @apply text-slate-300 font-bold text-sm;
+            }
+            .subtitle {
+                @apply text-white font-bold text-xs flex gap-1 items-center;
+            }
+        }
+    }
+}

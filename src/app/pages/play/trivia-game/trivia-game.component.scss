@@ -1,0 +1,38 @@
+.trivia-game {
+    @apply flex flex-col gap-2;
+    .title {
+        @apply font-bold text-center text-sm text-slate-400;
+    }
+    .question {
+        @apply flex flex-col gap-2;
+        .question-title {
+            @apply text-white font-bold text-sm text-center;
+        }
+        .options {
+            @apply flex flex-col gap-2 px-5;
+            .option {
+                @apply text-white font-bold text-sm text-center p-3 rounded-xl relative;
+                border: 1px solid var(--black-color-secondary);
+                .check-selected {
+                    display: none;
+                }
+                &.selected {
+                    @apply bg-white text-black;
+                    .check-selected {
+                        display: block;
+                        position: absolute;
+                        top: calc(50% - 12px);
+                        left: 12px
+                    }
+                }
+            }
+        }
+
+    }
+    .actions {
+        @apply flex flex-row gap-5 px-5 my-5;
+        & > div {
+            @apply flex-1;
+        }
+    }
+}

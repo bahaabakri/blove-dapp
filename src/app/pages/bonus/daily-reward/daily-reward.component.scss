@@ -1,0 +1,42 @@
+.daily-reward-container {
+    @apply grid grid-cols-3 xs:grid-cols-4 sm:grid-cols-6 md:grid-cols-7  gap-2 p-5;
+    .daily-reward-element {
+        @apply rounded-2xl; 
+        padding: 1px;
+        border: 1px solid var(--black-color-secondary);
+        > div {
+            @apply flex flex-col gap-2 w-full m-auto; 
+        }
+        .title {
+            @apply text-slate-500 text-sm text-center;
+        }
+        .tab-value-container {
+            @apply p-1 rounded-full m-auto;
+            background-color: #242424;
+            width: 40px;
+            height: 40px;
+            img {
+                @apply w-full h-full
+            }
+        }
+        .value {
+            @apply text-white font-bold text-sm text-center;
+        }
+
+        &.past-day {
+            background-color: #0D0D0D;
+        }
+        &.this-day {
+            position: relative;
+            @apply rounded-2xl;
+            background-image: linear-gradient(black, black), /* Inner background */
+                              var(--main-gradient);/* Outer gradient border */
+            background-origin: border-box;
+            background-clip: content-box, border-box;
+          
+        }
+        &.next-day {
+            background-color: 'transparent';
+        }
+    }
+}

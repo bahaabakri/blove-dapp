@@ -1,0 +1,12 @@
+<div class="invest-banner" 
+[style]="{backgroundImage: 'url(' + mainImg()  + ')'}">
+
+    <div class="logo">
+        <img [src]="logo()" alt="">
+    </div>
+    <div class="description">
+        {{description()}}
+    </div>
+    <ng-content></ng-content>
+
+</div>

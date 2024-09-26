@@ -1,0 +1,31 @@
+.become-a-ceo {
+    @apply flex flex-col gap-2;
+    .head {
+        @apply p-5 pb-0;
+        h2 {
+            @apply text-white font-bold text-xl text-center;
+        }
+        p {
+            @apply text-slate-500 text-sm text-center;
+        }
+    }
+    .ceo-banners {
+        @apply flex flex-col gap-2 px-5;
+        .banner-wrapper {
+            @apply relative;
+            .banner-check {
+                position: absolute;
+                width: 30px;
+                height: 30px;
+                top: 15px;
+                right: 10px;
+                img {
+                    @apply w-full h-full;
+                }
+            }
+        }
+    }
+    .save-button-wrapper {
+        @apply mx-5
+    }
+}

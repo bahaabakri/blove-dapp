@@ -1,0 +1,43 @@
+@use "@angular/material" as mat;
+
+@include mat.core();
+
+// Define your Tailwind color palette in Material terms
+$main-red-palette: mat.define-palette((
+  50: #fce4e4,
+  100: #f8baba,
+  200: #f48f8f,
+  300: #f06565,
+  400: #ec3a3a,
+  500: #DD1212,  // Primary shade
+  600: #c41111,
+  700: #aa0f0f,
+  800: #910e0e,
+  900: #6d0a0a,
+  contrast: (
+    50: #fce4e4,
+    100: #f8baba,
+    200: #f48f8f,
+    300: #f06565,
+    400: #ec3a3a,
+    500: white,  // Ensure you have contrasting colors for accessibility
+    600: white,
+    700: white,
+    800: white,
+    900: white,
+  ))
+);
+
+// Create the custom theme
+$custom-theme: mat.define-light-theme(
+    (
+        color: (
+          primary: $main-red-palette,
+          accent: $main-red-palette,
+          warn: $main-red-palette,
+        )
+    )
+);
+
+// Include the custom Material theme in your styles
+@include mat.all-component-themes($custom-theme);

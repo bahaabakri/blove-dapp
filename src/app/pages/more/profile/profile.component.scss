@@ -1,0 +1,79 @@
+.profile-wrapper {
+    @apply p-5 flex flex-col gap-5;
+    .profile-header {
+        @apply flex flex-row justify-between items-center;
+        .profile-icon-title {
+            @apply flex flex-row gap-2 items-center;
+            .profile-icon {
+                width: 50px;
+                height: 50px;
+                img {
+                    @apply w-full h-full
+                }
+            }
+            .profile-title { 
+                @apply flex flex-col gap-1;
+                .title {
+                    @apply text-white font-bold text-sm;
+                }
+                .subtitle {
+                    @apply flex flex-row gap-1 text-xs;
+                    color: #FFDA00;
+                    .copy {
+                        width: 15px;
+                        height: 15px;
+                        img {
+                            @apply w-full h-full
+                        }
+                    }
+                }
+            }
+        }
+        .profile-action {
+            .profile-button-content {
+                @apply flex flex-row gap-2 justify-center items-center px-5 text-sm text-white font-bold;
+            }
+        }
+    }
+    .profile-statistic {
+        @apply flex gap-2;
+        & > div {
+            @apply flex-1
+        }
+    }
+    .airdrop {
+        @apply flex flex-col gap-2;
+        .title {
+            @apply text-slate-400 font-bold text-xs;
+        }
+        .item-list-wrapper {
+            @apply rounded-xl;
+            background: linear-gradient(to right, #d30f0f4f, #151515 20%, #151515 50%, #d30f0f4f 100%);
+            .love-wallet-title {
+                @apply text-white font-bold text-sm;
+            }
+        }
+    }
+    .settings {
+        @apply flex flex-col gap-2;
+        .title {
+            @apply text-slate-400 font-bold text-xs;
+        }
+        .settings-list {
+            @apply flex flex-col gap-5;
+            .setting-items-wrapper {
+                @apply rounded-xl;
+                border: 1px solid var(--black-color-secondary);
+                .setting-item {
+                    // border: 1px solid var(--black-color-secondary);
+                    .setting-item-title {
+                        @apply text-slate-300 text-sm;
+                    }
+                }
+                .setting-divider {
+                    border: .5px solid var(--black-color-secondary);
+                }
+            }
+        }
+    }
+}

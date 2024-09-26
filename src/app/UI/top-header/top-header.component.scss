@@ -1,0 +1,17 @@
+.top-header {
+    @apply flex flex-col justify-end;
+    width: 100%;
+    height: 300px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center top;
+    @screen xs  {
+        background-size: contain;
+    }
+    h2 {
+        @apply text-white font-bold text-lg text-center;
+    }
+    p {
+        @apply text-slate-500 text-sm text-center px-5;
+    }
+}

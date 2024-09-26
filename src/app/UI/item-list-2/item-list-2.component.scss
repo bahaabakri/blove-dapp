@@ -1,0 +1,17 @@
+.item-list {
+    @apply flex flex-row justify-between items-center p-3 rounded-lg;
+    .item-list-icon-title {
+        @apply flex flex-row gap-5 items-center;
+        .item-list-icon {
+            @apply p-1;
+            width: 35px;
+            height: 35px;
+        }
+    }
+    .item-list-action {
+        @apply flex gap-2 items-center;
+        .value {
+            @apply text-slate-500  text-xs;
+        }
+    }
+}

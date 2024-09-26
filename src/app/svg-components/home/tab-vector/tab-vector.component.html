@@ -1,0 +1,28 @@
+<svg
+  [@animationEnergy]="animationState"
+  xmlns="http://www.w3.org/2000/svg"
+  [attr.width]="svgWidth()"
+  [attr.height]="svgHeight()"
+  [attr.viewBox]="svgViewBox()"
+  fill="none"
+>
+  <path
+    [attr.d]="svgD()"
+    [attr.fill]="(energyPercentage() >= 100) ? color() : 'url(#' + svgGradientId() +')'"
+  />
+
+  <defs>
+    <linearGradient
+      [attr.id]="svgGradientId()"
+      [attr.x1]="svgGradientX1()"
+      [attr.x2]="svgGradientX2()"
+      [attr.y1]="svgGradientY1()"
+      [attr.y2]="svgGradientY2()"
+      gradientUnits="userSpaceOnUse"
+    >
+      <stop [attr.stop-color]="color()"></stop>
+      <stop [attr.offset]="energyPercentage() + '%'" stop-color="#242424" />
+    </linearGradient>
+  </defs>
+</svg>
+

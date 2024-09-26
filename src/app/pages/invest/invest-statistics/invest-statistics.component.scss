@@ -1,0 +1,12 @@
+.icon-wrapper {
+    min-width: 25px;
+}
+.data-wrapper {
+    @apply flex flex-col gap-1;
+    .title {
+        @apply  text-slate-500 text-xs flex gap-2 items-center;
+    }
+    .value {
+        @apply  text-white text-xs font-bold;
+    }
+}

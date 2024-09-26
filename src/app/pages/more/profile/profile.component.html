@@ -1,0 +1,148 @@
+<div class="profile-wrapper">
+    <div class="profile-header">
+        <div class="profile-icon-title">
+            <div class="profile-icon">
+                <img src="assets/profile/profile.png" alt="Profile">
+            </div>
+            <div class="profile-title">
+                <div class="title">Adam Costa</div>
+                <div class="subtitle">
+                    <div class="user-id">
+                        ID123456
+                    </div>
+                    <div class="copy">
+                        <img src="assets/profile/copy.png" alt="Copy">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="profile-action">
+            <app-button 
+            (handleClickEvent)="onOpenEditProfile()">
+                <div class="profile-button-content">
+                    <div>
+                        <img src="assets/profile/edit.png" alt="Edit">
+                    </div>
+                    <div>Edit</div>
+                </div>
+            </app-button>
+        </div>
+    </div>
+    <div class="profile-statistic">
+        <div>
+            <app-profile-statistic-card
+            [icon]="'assets/profile/comments-icon.png'"
+            [title]="'Community Chat'"
+            [badgeVal]="'50'"
+            [background]="'linear-gradient(to right, var(--black-color) 0%, #9e1111 100%)'"
+            >
+            </app-profile-statistic-card>
+        </div>
+        <div>
+        
+            <app-profile-statistic-card
+            [icon]="'assets/profile/chat-circle-dots.png'"
+            [title]="'Suggestion Box'"
+            [badgeVal]="'00'"
+            [isDisabled]="true"
+            [background]="'linear-gradient(to right, var(--black-color) 0%, #068caf 100%)'"
+            >
+
+            </app-profile-statistic-card>
+        </div>
+
+    </div>
+    <div>
+        <app-profile-invites
+        [numOfInvites]="'3'"
+        [totalReferralInvited]="'102.5K'"
+        [totalReferralPoints]="'102.5K'"
+        >
+
+        </app-profile-invites>
+    </div>
+    <div class="airdrop">
+        <div class="title">Airdrop</div>
+        <div class="item-list-wrapper">
+            <app-item-list-2
+            [iconPath]="'assets/profile/love-wallet-logo.png'"
+            [actionType]="'arrow'"
+            >
+            <div class="love-wallet-title">Connect Love Wallet</div>
+            </app-item-list-2>
+        </div>
+    </div>
+    <div class="settings">
+        <div class="title">Settings</div>
+        <div class="settings-list">
+            <div class="setting-items-wrapper">
+                <div class="setting-item">
+                    <app-item-list-2
+                    [iconPath]="'assets/profile/global-stats.png'"
+                    [actionType]="'arrow'"
+                    >
+                    <div class="setting-item-title">Global Stats</div>
+                    </app-item-list-2>
+                </div>
+            </div>
+            <div class="setting-items-wrapper">
+                <div class="setting-item">
+                    <app-item-list-2
+                    [iconPath]="'assets/profile/language.png'"
+                    [actionType]="'arrow'"
+                    [value]="'English'"
+                    >
+                    <div class="setting-item-title">Change Language</div>
+                    </app-item-list-2>
+                </div>
+                <hr class="setting-divider">
+                <div class="setting-item">
+                    <app-item-list-2
+                    [iconPath]="'assets/profile/faqs.png'"
+                    [actionType]="'arrow'"
+                    >
+                    <div class="setting-item-title">FAQs</div>
+                    </app-item-list-2>
+                </div>
+                <hr class="setting-divider">
+                <div class="setting-item">
+                    <app-item-list-2
+                    [iconPath]="'assets/profile/delete-account.png'"
+                    [actionType]="'arrow'"
+                    >
+                    <div class="setting-item-title">Delete Account</div>
+                    </app-item-list-2>
+                </div>
+            </div>
+            <div class="setting-items-wrapper">
+                <div class="setting-item">
+                    <app-item-list-2
+                    [iconPath]="'assets/profile/haptic-feedback.png'"
+                    [actionType]="'switch'"
+                    >
+                    <div class="setting-item-title">Haptic Feedback </div>
+                    </app-item-list-2>
+                </div>
+                <hr class="setting-divider">
+                <div class="setting-item">
+                    <app-item-list-2
+                    [iconPath]="'assets/profile/points-animation.png'"
+                    [actionType]="'switch'"
+                    >
+                    <div class="setting-item-title">Points Animation</div>
+                    </app-item-list-2>
+                </div>
+            </div>
+            <div class="setting-items-wrapper">
+                <div class="setting-item">
+                    <app-item-list-2
+                    [iconPath]="'assets/profile/logout.png'"
+                    >
+                    <div class="setting-item-title">Logout</div>
+                    </app-item-list-2>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

@@ -1,0 +1,31 @@
+<div (click)="openModal()">
+    <app-item-list
+        [id]="id()"
+        [iconPath]="iconPath()"
+        [title]="title()"
+        [subtitle]="subtitle()"
+        [logoPath]="logoPath()"
+    >
+        
+    </app-item-list>
+</div>
+
+
+<app-modal
+    [isOpen]="isOpen()"
+    (handleOnClose)="handleCloseModal()"
+>
+    <app-bonus-modal
+        [id]="id()"
+        [imgSrc]="iconPath()"
+        [title]="title()"
+        [subtitle]="subtitle()"
+        [cost]="subtitle()"
+        (redeemBonusOut)="onRedeemTask()"
+    >
+    </app-bonus-modal>
+
+</app-modal>
+
+
+

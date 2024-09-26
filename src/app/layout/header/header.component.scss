@@ -1,0 +1,65 @@
+header {
+    @apply  p-5 pb-2;
+    position: relative;
+    z-index: 1;
+    border-radius: 0 0 20px 20px;
+    background: var(--main-gradient);
+    // border-image: linear-gradient(to right, #00B7E8 0%, #04BC75 25%, #FFDA00 50%, #D30F0F 100%)  1 round;
+    // border-width: 0 0 3px 0;
+    .profile {
+        @apply rounded-full bg-main-red-500  w-10 h-10;
+    }
+    .name {
+        @apply text-white text-sm;
+    }
+    .description {
+        @apply text-white text-xs;
+    }
+    .statistics {
+        @apply text-slate-500 text-xs;
+    }
+    progress {
+        border-radius: 5px; 
+        height: 10px;
+        max-width: 100px;
+        box-shadow: 1px 1px 1px rgba( 0, 0, 0, 0.2 );
+        @apply border border-main-red-500;
+      }
+    progress::-webkit-progress-bar {
+    background-color: transparent;
+    border-radius: 7px;
+    }
+    progress::-webkit-progress-value {
+    @apply bg-main-red-500;
+    border-radius: 7px;
+    }
+}
+.ceo-button {
+    @apply flex flex-row gap-2 items-center px-2;
+    .ceo-icon-wrapper {
+        width: 24px;
+        height: 24px;
+        img {
+            @apply w-full h-full;
+        }
+    }
+    .title {
+        @apply text-sm font-bold text-white;
+    }
+}
+header:after {
+    content:'';
+    position: absolute;
+    border-radius: 0 0 20px 20px;
+    background: #000;
+    height: 100%;
+    width: 100%;
+    top: -2px;
+    left: 0;
+    z-index: -1;
+}
+
+.page-name {
+    @apply text-white;
+
+}

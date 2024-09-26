@@ -1,0 +1,6 @@
+.actions {
+    @apply flex flex-row gap-5 px-5 my-5;
+    & > div {
+        @apply flex-1;
+    }
+}

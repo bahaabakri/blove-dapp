@@ -1,0 +1,27 @@
+/* You can add global styles to this file, and also import other style files */
+
+// import scss variables 
+@use './styles/variables';
+
+// Tailwind css directives
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+// fonts
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+@import './styles/custom-theme.scss';
+// Global Style
+body {
+    @apply max-w-3xl;
+    background-color: black;
+    margin: auto;
+}
+* {
+    font-family: 'Inter';
+}
+.button-text {
+    @apply text-white font-bold;
+}
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

@@ -1,0 +1,7 @@
+.invest-project {
+    @apply flex flex-col gap-5 px-5;
+
+    .invest-cards {
+        @apply grid grid-cols-2 gap-5;
+    }
+}

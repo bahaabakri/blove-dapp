@@ -1,0 +1,42 @@
+<div class="trivia-game">
+    <app-top-header
+    [title]="'Daily Trivia Challenge'"
+    [subtitle]="'Answer a question each day to receive additional rewards.'"
+    [imgSrc]="'assets/play/trivia-game-bg.png'"
+    >
+    </app-top-header>
+    <app-tab-value-horizintal
+        [value]="triviaGameReward | number"
+    >
+    </app-tab-value-horizintal>
+    <div class="title">
+        Answer the following question
+    </div>
+    <div class="question">
+        <div class="question-title">
+            {{questionData.question}}
+        </div>
+        <div class="options">
+            @for(option of questionData.options; track option.id) {
+                <div class="option" [ngClass]="{'selected' : selectedOption.id == option.id}" (click)="onSelectOption(option)">
+                    {{option.option}}
+                        <div class="check-selected">
+                            <img src="assets/check-selected.png" alt="">
+                        </div>
+                </div>
+            }
+        </div>
+    </div>
+    <app-games-actions (submitAnswer)="onSubmitAnswer()"></app-games-actions>
+</div>
+<!--Template for success modal-->
+<!-- <ng-template #bingoContent>
+    <div class="flex flex-col gap-2">
+      <div class="m-auto w-9 h-9">
+        <img class="w-full h-full" src="assets/logo/logo.png" alt="">
+      </div>
+      <div class="text-white text-lg font-bold text-center">
+        {{ triviaGameReward | number }}
+      </div>
+    </div>
+</ng-template> -->

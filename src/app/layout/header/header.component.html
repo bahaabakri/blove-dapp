@@ -1,0 +1,43 @@
+<header class="flex justify-between">
+    @if (isMainPage) {
+        <div class="flex gap-3 cursor-pointer" (click)="navigateToProfilePage()">
+            <div class="profile">
+                <img class="w-full h-full" src="/assets/header/profile.png" alt="">
+            </div>
+            <div class="flex flex-col">
+                <div class="name">Adam Costa</div>
+                <div class="flex gap-2 items-baseline flex-wrap">
+                    <div class="description">SPELL CASTER</div>
+                    <div class="statistics">3.2M/4.8M</div>
+                    <!-- <div>
+                        <progress class="progress-bar" max="10" value="3"></progress>
+                    </div> -->
+                </div>
+            </div>
+        </div>
+        <div class="">
+            <app-button [borderColor]="'#333'" (handleClickEvent)="navigateToCEOPage()">
+                <div class="ceo-button">
+                    <div class="ceo-icon-wrapper">
+                        <img src="/assets/header/ceo-icon.png" alt="">
+                    </div>
+                    <div class="title">
+                        CEO
+                    </div>
+                </div>
+                
+            </app-button>
+        </div>
+    } @else {
+        <div class="flex flex-row items-center gap-3">
+            <div>
+                <app-button (handleClickEvent)="onGoBack()">
+                    <img src="/assets/back-icon.png" alt="">
+                </app-button>
+            </div>
+            <div class="page-name">
+                {{pageTitle | makeItTitle | titlecase}}
+            </div>
+        </div>
+    }
+</header>

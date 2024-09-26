@@ -1,0 +1,7 @@
+.home-boost {
+    @apply flex flex-col gap-2;
+    .home-boost-list {
+        @apply flex flex-col gap-2 p-5;
+    }
+
+}

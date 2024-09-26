@@ -1,0 +1,16 @@
+<app-statistics>
+        <div class="icon-wrapper">
+            <img src="assets/logo/logo.png" alt="profit-per-hour">
+        </div>
+        <div class="data-wrapper">
+            <div class="title">
+                <div class="text-nowrap">Balance </div>
+                <div>
+                    <img src="assets/home/Info.png" alt="info">
+                </div>
+            </div>
+            <div class="value">
+                {{_homeTabService.tabValue() | number}}
+            </div>
+        </div>        
+</app-statistics>

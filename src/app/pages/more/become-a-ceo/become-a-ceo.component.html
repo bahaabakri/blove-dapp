@@ -1,0 +1,31 @@
+<div class="become-a-ceo">
+    <div class="head">
+        <h2>Become a CEO - Choose one project from the ecosytem</h2>
+        <p>The project you choose will be titled to reward you with points based on your Profit Per Hour.</p>
+    </div>
+    <div class="ceo-banners">
+        @for(banner of becomeACeoBanners; track banner) {
+            <div class="banner-wrapper" (click)="banner.isActive ? banner.isActive = !banner.isActive : banner.isActive = true">
+                <app-banner 
+                [mainImg]="banner.mainImg"
+                [logo]="banner.logo"
+                [description]="banner.description"
+                ></app-banner>
+                <div class="banner-check">
+                    @if(banner.isActive) {
+                        <img src="assets/check-selected.png" alt="">
+                    } @else {
+                        <img src="assets/check-disabled.png" alt="">
+                    }
+                    
+                </div>
+            </div>
+            
+        }
+    </div>
+    <div class="save-button-wrapper">
+        <app-button (handleClickEvent)="saveProject()" [borderColor]="'linear-gradient(to right, #00B7E8 0%, #04BC75 25%, #FFDA00 50%, #D30F0F 100%)'">
+            <span class="button-text">Save Projects</span>
+        </app-button>
+    </div>
+</div>

@@ -1,0 +1,71 @@
+.profile-invites {
+    @apply flex flex-col gap-3 p-5 rounded-2xl;
+    // background: linear-gradient(395deg, #151515 50%, #2c2c2c 60%, #ffd900 100%);
+    background: linear-gradient(395deg, #151515 50%, #ffd90027 60%, #ffd90041 70%, #ffd90065 80%, #ffd90094 90%, #ffd900ee 100%);
+    .profile-invites-header {
+        @apply flex flex-row justify-between items-center;
+        .icon-title {
+            @apply flex flex-row gap-3 items-center;
+            .icon {
+                width: 50px;
+                height: 50px;
+                background-color: #FFFFFF1A;
+                @apply p-2 rounded-2xl;
+                img {
+                    @apply w-full h-full;
+                }
+            }
+            .title-subtitle {
+                @apply flex flex-col gap-1;
+                .title{
+                    @apply text-sm font-bold text-white;
+                }
+                .subtitle {
+                    @apply text-xs text-slate-400;
+                }
+            }
+        }
+        .action {
+            @apply p-1;
+            width: 35px;
+            height: 35px;
+        }
+    }
+    .profile-invites-statistics {
+        @apply flex flex-row gap-3;
+        & > div {
+            @apply flex-1 flex flex-col gap-1 rounded-2xl p-3;
+            border: 1px solid #FFFFFF1A;
+            .title {
+                @apply text-xss text-slate-400;
+            }
+            .value-logo {
+                @apply flex gap-1;
+                .logo {
+                    width: 16px;
+                    height: 16px;
+                    img {
+                        @apply w-full h-full;
+                    }
+                }
+                .value {
+                    @apply text-white;
+                }
+            }
+        }
+    }
+    .profile-invites-share {
+        @apply flex flex-row gap-3 items-center;
+        .share-icon-title {
+            @apply flex flex-row gap-3 items-center flex-grow p-3 rounded-2xl;
+            background-color: #FFFFFF1A;
+            .share-title {
+                @apply text-xs font-bold text-white;
+            }
+        }
+        .share-link {
+            @apply p-3 rounded-2xl h-full;
+            background-color: #2E2E2E;
+        }
+    }
+}

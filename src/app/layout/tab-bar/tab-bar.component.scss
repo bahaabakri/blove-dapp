@@ -1,0 +1,21 @@
+.tab-bar-container {
+    @apply flex justify-between p-3;
+    position: relative;
+    z-index: 1;
+    border-radius: 20px 20px 0 0;
+    background: var(--main-gradient);
+::after {
+    content:'';
+    position: absolute;
+    border-radius: 20px 20px 0 0;
+    background: #000;
+    height: 100%;
+    width: 100%;
+    top: 2px;
+    left: 0;
+    z-index: -1;
+}
+& a {
+    @apply flex-1;
+}
+}

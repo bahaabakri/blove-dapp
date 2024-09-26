@@ -1,0 +1,14 @@
+<button 
+    class="custom-button"
+    [style]="{
+      background: borderColor(),
+      boxShadowColor: borderColor()
+    }"
+    [ngClass]="customClass()" 
+    [disabled]="disabled()" 
+    [attr.type]="type()"
+    [attr.aria-label]="ariaLabel()" 
+    [attr.title]="title()"
+    (click)="handleOnClick()">
+    <ng-content></ng-content>
+  </button>

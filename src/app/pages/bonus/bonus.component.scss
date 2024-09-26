@@ -1,0 +1,44 @@
+.bonus {
+    @apply flex flex-col gap-2;
+    .bonus-list {
+        @apply flex flex-col gap-2 p-5;
+    }
+    .section-title {
+        @apply text-slate-400 font-bold text-sm px-5 pt-2 pb-0;
+    }
+
+    .daily-rewards-item {
+            @apply flex flex-row justify-between items-center p-3 rounded-lg relative;
+            background-color: var(--black-color);
+            .item-list-icon-title {
+                @apply flex flex-row gap-5 items-center;
+                .item-list-icon {
+                    @apply p-1;
+                    width: 50px;
+                    height: 50px;
+                }
+                .item-list-title {
+                    @apply flex flex-col gap-1;
+                    .title {
+                        @apply text-white font-bold text-sm;
+                    }
+                    .subtitle {
+                        @apply text-slate-500 font-bold text-xs flex gap-1 items-center;
+                    }
+                }
+            }
+            .daily-reward-points {
+                @apply grid grid-cols-7 gap-1;
+                .daily-reward-point {
+                    width: 8px;
+                    height: 8px;
+                    border-radius: 50%;
+                }
+            }
+            .check-circle {
+                width: 25px;
+                height: 25px;
+                @apply absolute top-1 left-1
+            }
+    }
+}

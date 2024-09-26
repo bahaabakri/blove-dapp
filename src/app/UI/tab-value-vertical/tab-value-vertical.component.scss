@@ -1,0 +1,17 @@
+.cost-lvl {
+    @apply flex flex-col gap-2;
+    .img-wrapper {
+        margin: auto;
+        width: 35px;
+        height: 35px;
+        img {
+            @apply w-full h-full;
+        }
+    }
+    .cost {
+        @apply text-white text-lg font-bold text-center;
+    }
+    .lvl {
+        @apply text-slate-400 text-sm  text-center;
+    }
+}

@@ -1,0 +1,75 @@
+<div class="bonus">
+    <app-top-header
+    [title]="'Earn Bonus Points'"
+    [subtitle]="'Treat yourself with huge bonuses by completing some simple tasks.'"
+    [imgSrc]="'assets/bonus/bonus-bg.png'"
+    >
+    </app-top-header>
+    <div class="">
+        <div class="section-title">
+            <div>Primary Tasks</div>
+        </div>
+        <div class="bonus-list">
+            @for (bonusPrimaryItem of bonusPrimaryItems; track bonusPrimaryItem.id) {
+                <app-bonus-item
+                    [id]="bonusPrimaryItem.id"
+                    [title]="bonusPrimaryItem.title" 
+                    [subtitle]="bonusPrimaryItem.subtitle" 
+                    [iconPath]="bonusPrimaryItem.iconPath"
+                    [logoPath]="bonusPrimaryItem.logoPath"
+                >
+                </app-bonus-item>
+            }
+        </div>
+        <div class="section-title">
+            <div>Daily Rewards</div>
+        </div>
+        <div class="bonus-list">
+            <div class="daily-rewards-item" (click)="onOpenDailyReward()">
+                <div class="item-list-icon-title">
+                    <div class="item-list-icon">
+                        <img src="assets/bonus/daily-rewards-icon.png" alt="">
+                    </div>
+                    <div class="item-list-title">
+                        <div class="title">Daily Rewards</div>
+                        <div class="subtitle" [appCountDown]="'2024-09-24T12:00:00'">
+                    
+                        </div>
+                    </div>
+                </div>
+                <div class="daily-reward-points">
+                    @for (el of [].constructor(14); track el) {
+                        <div class="daily-reward-point"
+                        [ngStyle]="{backgroundColor: numOfDayOfDailyReward  == $index + 1 ? '#D5D5D5' :
+                            numOfDayOfDailyReward > $index + 1 ? '#4CAF50': '#2E2E2E'
+                        }"
+                        >
+                        </div>
+                    }
+                </div>
+
+                <div class="check-circle">
+                    <img src="assets/bonus/check-circle.png" alt="">
+
+                </div>
+            </div>
+        </div>
+
+        <div class="section-title">
+            <div>Additional Tasks</div>
+        </div>
+        <div class="bonus-list">
+            @for (bonusAdditionalItem of bonusAdditionalItems; track bonusAdditionalItem.id) {
+                <app-bonus-item
+                    [id]="bonusAdditionalItem.id"
+                    [title]="bonusAdditionalItem.title" 
+                    [subtitle]="bonusAdditionalItem.subtitle" 
+                    [iconPath]="bonusAdditionalItem.iconPath"
+                    [logoPath]="bonusAdditionalItem.logoPath"
+                >
+                </app-bonus-item>
+            }
+        </div>
+
+    </div>
+</div>

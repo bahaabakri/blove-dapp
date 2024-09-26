@@ -1,0 +1,20 @@
+<div class="invest-project" 
+appSlideRightLeft
+(handleSlideRight)="onSlideRight()"
+(handleSlideLeft)="onSlideLeft()"
+[@slideInOutTab]="animationState"
+>
+    <div>
+        <app-invest-banner></app-invest-banner>
+    </div>
+    <div class="invest-cards">
+        @for (el of [1,1,1,1,1,1]; track el) {
+            <div>
+                <app-invest-card></app-invest-card>
+            </div>
+        }
+        <app-invest-card [isLock]="true"></app-invest-card>
+        <app-invest-card [isLock]="true"></app-invest-card>
+    </div>
+</div>
+

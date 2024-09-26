@@ -1,0 +1,32 @@
+<div class="daily-reward-modal-wrapper" (click)="onClickInsideDialog($event)">
+    <div class="daily-reward-modal">
+        <!-- <div class="img-title-subtitle" [style]="{
+            backgroundImage: 'url(' + imgSrc() + ')'
+        }">
+            <div>
+                <div class="title">{{title()}}</div>
+                <div class="subtitle">{{subtitle()}}</div>
+            </div>
+
+        </div> -->
+        <app-top-header
+        [title]="title()"
+        [subtitle]="subtitle()"
+        [imgSrc]="imgSrc()"
+        ></app-top-header>
+    
+        <div class="cost-ivi">
+            <div class="img-wrapper">
+                <img src="assets/logo/logo.png" alt="">
+            </div>
+            <div class="cost">{{cost()}}</div>
+    
+        </div>
+        <div class="use-button-wrapper">
+            <app-button (handleClickEvent)="onCollectDailyReward()" [borderColor]="'linear-gradient(to right, #00B7E8 0%, #04BC75 25%, #FFDA00 50%, #D30F0F 100%)'">
+                <span class="button-text">Done</span>
+            </app-button>
+        </div>
+    </div>
+</div>
+

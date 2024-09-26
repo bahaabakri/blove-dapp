@@ -1,0 +1,32 @@
+::ng-deep {
+    .invest-tabs {
+        .mat-mdc-tab-link.mdc-tab--active .mdc-tab-indicator__content--underline {
+            border: 1px solid;
+            border-image: var(--main-gradient);
+            border-image-slice: 1
+        }
+        .mat-mdc-tab-link .mdc-tab__text-label, 
+        .mat-mdc-tab-link.mdc-tab--active .mdc-tab__text-labe{
+            color: #FFF !important
+          }
+        .mat-mdc-tab-link-container {
+            overflow-x: auto !important;
+        }
+        .mat-mdc-tab-list {
+            transform: translateX(-5px)!important ;
+        }
+        .mdc-tab {
+            font-size: 12px;  /* Smaller font for mobile */
+            padding: 4px 8px; /* Reduce padding for smaller tabs */
+        }
+        .mat-mdc-tab-header-pagination-chevron {
+            border-color: #FFF;
+        }
+        ::-webkit-scrollbar {
+            width: 0px;
+            background: transparent; /* make scrollbar transparent */
+        }
+
+
+    }
+}

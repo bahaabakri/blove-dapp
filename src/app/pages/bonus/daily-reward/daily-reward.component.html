@@ -1,0 +1,50 @@
+<app-top-header
+[title]="'Collect Daily Reward'"
+[subtitle]="'Login every day to receive your daily rewards. Make sure to be consistent.'"
+[imgSrc]="'assets/bonus/daily-reward-img.png'"
+></app-top-header>
+
+<div class="daily-reward-container">
+    @for (dailyRewardData of dailyRewardsData; track dailyRewardData) {
+        <div class="daily-reward-element"
+        (click)="openModal($index + 1)"
+        [ngClass]="{
+            'past-day' : numOfDayOfDailyReward  > $index + 1,
+            'this-day' : numOfDayOfDailyReward  == $index + 1,
+            'next-day' : numOfDayOfDailyReward  < $index + 1
+        }" >
+            <div class="p-5">
+                <div class="title">
+                    Day {{$index + 1}}
+                </div>
+                <div class="tab-value-container">
+                    @if(numOfDayOfDailyReward  >= $index + 1) {
+                        <img src="assets/logo/logo.png" alt="">
+                    } @else {
+                        <img src="assets/logo/disabled-logo.png" alt="">
+                    }
+                </div>
+                <div class="value">
+                    {{dailyRewardData.value}}
+                </div>
+            </div>
+
+        </div>
+    }
+
+</div>
+<app-modal
+    [isOpen]="isOpen()"
+    (handleOnClose)="handleCloseModal()"
+>
+    <app-daily-reward-modal
+    [title]="'Congratulations!'"
+    [subtitle]="'You have collected your daily reward for today.'"
+    [cost]="selectedDailyRewardVal ?? ''"
+    [imgSrc]="'assets/home/success-heart.png'"
+    (onCollectDailyRewardOut)="handleCloseModal()"
+
+    >
+
+    </app-daily-reward-modal>
+</app-modal>

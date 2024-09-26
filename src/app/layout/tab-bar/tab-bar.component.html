@@ -1,0 +1,29 @@
+<div class="tab-bar-container">
+  <a routerLink="home">
+    <app-tab-bar-element [label]="'Home'">
+      <app-home-icon [isActive]="page.startsWith('/home') || page == '/'"></app-home-icon>
+    </app-tab-bar-element>
+  </a>
+  <a routerLink="invest">
+    <app-tab-bar-element [label]="'Invest'">
+      <app-invest-icon [isActive]="page.startsWith('/invest')"></app-invest-icon>
+    </app-tab-bar-element>
+  </a>
+  <a routerLink="bonus">
+    <app-tab-bar-element [label]="'Bonus'">
+      <app-bonus-icon [isActive]="page.startsWith('/bonus')"></app-bonus-icon>
+    </app-tab-bar-element>
+  </a>
+  <a routerLink="play">
+    <app-tab-bar-element [label]="'Play'">
+      <app-play-icon [isActive]="page.startsWith('/play')"></app-play-icon>
+    </app-tab-bar-element>
+  </a>
+  <a routerLink="more">
+    <app-tab-bar-element [label]="'More'">
+      <app-more-icon [isActive]="page.startsWith('/more')"></app-more-icon>
+    </app-tab-bar-element>
+  </a>
+
+
+</div>

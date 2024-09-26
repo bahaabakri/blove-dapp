@@ -1,0 +1,29 @@
+
+<!-- @if(isOpen) { -->
+    <dialog  
+    #dialog 
+    (close)="handleClose()" (click)="close()">
+        @if(isOpen()) {   
+            <!-- <div class="main-dialog"></div> -->
+            <div @slideInOutModal class="dialog-content">
+                <div class="dialog-content-child">
+                    <div class="dialog-header">
+                        <hr>
+                        <div class="close-icon-warper" (click)="close()">
+                            <div class="close-icon">
+                                <img src="assets/close-icon.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <ng-content></ng-content>
+                </div>
+
+            </div>
+        }
+    </dialog>
+<!-- } -->  
+
+
+<!-- appDragDropTouch
+(draggingChange)="onDraggingChange($event)"
+(closeModal)="close()" -->

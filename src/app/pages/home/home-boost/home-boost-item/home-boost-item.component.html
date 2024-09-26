@@ -1,0 +1,34 @@
+
+<div (click)="openModal()">
+    <app-item-list
+        [id]="id()"
+        [iconPath]="iconPath()"
+        [title]="title()"
+        [subtitle]="subtitle()"
+        [logoPath]="logoPath()"
+    >
+        
+    </app-item-list>
+</div>
+
+
+<app-modal
+    [isOpen]="isOpen()"
+    (handleOnClose)="handleCloseModal()"
+>
+    <app-home-boost-modal
+        [id]="id()"
+        [imgSrc]="imgSrc()"
+        [title]="title()"
+        [subtitle]="subtitlePopup()"
+        [subtitle2Val]="subtitle2Val()"
+        [subtitle2]="subtitle2()"
+        [cost]="cost()"
+        [lvl]="lvl()"
+        (redeemBoostOut)="onRedeemBoost($event)"
+    >
+    </app-home-boost-modal>
+
+</app-modal>
+
+

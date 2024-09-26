@@ -1,0 +1,26 @@
+<div class="item-list">
+    <div class="item-list-icon-title">
+        <div class="item-list-icon">
+            <img [src]="iconPath()" alt="">
+        </div>
+        <ng-content></ng-content>
+    </div>
+    <div class="item-list-action">
+        @if(value()) {
+            <div class="value">
+                {{value()}}
+            </div>
+        }
+        @if(actionType()) {
+            @if(actionType() == 'arrow') {
+                <div>
+                    <img src="assets/arrow-right.png" alt="">
+                </div>
+            } @else if (actionType() == 'switch') {
+                <mat-slide-toggle
+                    color="main-red">
+                </mat-slide-toggle>
+            }
+        }
+    </div>
+</div>

@@ -1,0 +1,59 @@
+<div class="guess-word-game">
+    <app-top-header
+    [title]="'Daily Word Guess'"
+    [subtitle]="'Guess the word correctly once in every 24 hours and win bonus points.'"
+    [imgSrc]="'assets/play/word-guess-bg.png'"
+    >
+    </app-top-header>
+    <app-tab-value-horizintal
+        [value]="guessWordGameReward | number"
+    >
+    </app-tab-value-horizintal>
+    <div class="info">
+        <div class="info-el">
+            <div class="included-circle circle">
+
+            </div>
+            <div class="title">
+                Included
+            </div>
+        </div>
+        <div class="info-el">
+            <div class="misplaced-circle circle">
+
+            </div>
+            <div class="title">
+                Included but misplaced
+            </div>
+        </div>
+        <div class="info-el">
+            <div class="not-included-circle circle">
+
+            </div>
+            <div class="title">
+                Not Included
+            </div>
+        </div>
+    </div>
+    <form class="matrix" (ngSubmit)="handleSubmit()">
+        @for(row of triesArray; track row) {
+            <div class="row">
+                @for(el of guessWordGameWord; track $index) {
+                    <div class="element"
+                    [ngClass]="{'selected' : orderOfTry() === row}">
+                        <input type="text"
+                        [id]="'input-' + (row -1) + '-' +  $index"
+                        maxlength="1"
+                        [disabled]="orderOfTry() !== row"
+                        [(ngModel)]="selectedWord[row -1][$index]"
+                        [ngModelOptions]="{standalone: true}"
+                        (keyup)="handleOnInputKeyUp($event, row -1, $index)">
+                    </div>
+                }
+            </div>
+            <button type="submit" class="hidden"></button>
+        }
+    </form>
+
+    <app-games-actions (submitAnswer)="onSubmitAnswer()"></app-games-actions>
+</div>

@@ -1,0 +1,16 @@
+
+<app-statistics>
+    <div class="icon-wrapper">
+        <img src="assets/home/energy.png" alt="energy">
+    </div>
+    <div class="data-wrapper">
+        <div class="value flex ">
+            <div [@countChanged]="_homeTabService.currentEnergy()">
+                {{_homeTabService.currentEnergy() | number : '1.0-0'}}</div> 
+                &nbsp;/&nbsp;
+            <div>
+                {{_homeTabService.totalEnergy | number}}
+            </div>
+        </div>
+    </div>            
+</app-statistics>

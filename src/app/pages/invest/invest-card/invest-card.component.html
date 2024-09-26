@@ -1,0 +1,54 @@
+<div class="invest-card">
+    <div class="flex flex-col gap-5 p-5">
+        <div class="main-image">
+            @if(this.isLock()) {
+                <img src="assets/invest/lock-card-img.png" [alt]="investCard.title">
+            } @else {
+                <img [src]="investCard.mainImg" [alt]="investCard.title">
+            }
+        </div>
+        <div class="title" [ngClass]="this.isLock() ? 'lock' : 'active'">
+            {{investCard.title}}
+        </div>
+        @if (!this.isLock()) {
+            <div class="profit-per-hour">
+                <div class="title">
+                    Profit Per Hour
+                </div>
+                <div class="value">
+                    {{investCard.pphBenefit}}
+                </div>
+            </div>
+        }
+
+    </div>
+
+    <div class="invest-card-footer">
+        @if (this.isLock()) {
+            <div class="tabVal-container">
+                <div>
+                    <img src="assets/invest/warning-icon.png" alt="'warning'">
+                </div>
+                <div class="tabVal">
+                    {{investCard.category}}
+                </div>
+            </div>
+        } @else {
+            <div class="tabVal-container">
+                <div>
+                    <img src="assets/logo/logo.png" alt="'logo'">
+                </div>
+                <div class="tabVal">
+                    {{investCard.tabValue}}
+                </div>
+            </div>
+            <div class="lvl">
+                lvl {{investCard.lvl}} 
+            </div>
+        }
+
+    </div>
+    <div class="invest-card-label" [style]="{background: investCard.cornerIconColor}">
+        <img src="assets/invest/card-corner-icon.png" [alt]="investCard.title">
+    </div>
+</div>

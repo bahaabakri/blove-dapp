@@ -1,0 +1,20 @@
+<div class="main-modal-wrapper" (click)="onClickInsideDialog($event)">
+    <div class="main-modal">
+        <app-top-header
+        [title]="title()"
+        [subtitle]="subtitle()"
+        [imgSrc]="imgSrc()"
+        ></app-top-header>
+        @if(content()) {
+            <div [innerHTML]="content()"></div>
+        }
+        
+        <div class="use-button-wrapper">
+            <app-button 
+            (handleClickEvent)="handleNavigation()" 
+            [borderColor]="buttonColor() ?? 'linear-gradient(to right, #00B7E8 0%, #04BC75 25%, #FFDA00 50%, #D30F0F 100%)'">
+                <span class="button-text">{{buttonTitle()}}</span>
+            </app-button>
+        </div>
+    </div>
+</div>

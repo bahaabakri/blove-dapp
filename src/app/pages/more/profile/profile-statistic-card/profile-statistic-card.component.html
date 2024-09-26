@@ -1,0 +1,13 @@
+<div class="profile-statistic-card" [style]="{background:background()}">
+    <div class="icon-badge">
+        <div class="icon">
+            <img [src]="icon()" alt="">
+        </div>
+        <div class="badge"
+        [ngClass]="!isDisabled() ? 'text-white' : 'text-slate-400' "
+        >
+            {{badgeVal()}}
+        </div>
+    </div>
+    <div class="title">{{title()}}</div>
+</div>
